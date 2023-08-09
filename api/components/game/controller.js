@@ -1,11 +1,8 @@
 const response = require('../../../network/response');
+const tryCatchFn = require('../../../utils/tryCatchFn');
 
 module.exports = {
-  getAllGames: async (req, res) => {
-    try {
-      response.succes(req, res, [{ id: 1, title: 'algo' }]);
-    } catch (error) {
-      response.error(req, res, { message: 'UPS! algo salio mal' });
-    }
-  },
+  getAllGames: tryCatchFn(async (req, res) => {
+    response.succes(req, res, [{ id: 1, title: 'prueba' }], 201);
+  }),
 };

@@ -16,7 +16,7 @@ module.exports = {
     res.status(statusCode).json({
       error: true,
       status: statusCode,
-      body: statusMessage,
+      message: statusMessage,
     });
   },
 };
